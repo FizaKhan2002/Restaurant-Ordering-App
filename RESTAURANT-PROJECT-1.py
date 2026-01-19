@@ -18,8 +18,7 @@ class Restaurant():
 
      def take_order(self):
          order_count = 1  # Counter to generate unique keys for text_input widgets as they always take unique value
-         rest_pic = Image.open("An-image-of-Alberto-and-Luca-eating-Trenette-al-Pesto.jpg")
-         st.image(rest_pic, caption="WELCOME TO RESTAURANT")
+         
          self.order = st.radio("do you want to order something ?", options=["yes", "no"])
 
          while self.order=="yes":
@@ -43,14 +42,14 @@ class Restaurant():
      def show_total(self):
          st.write(f"Your Total Amount is Rs.{self.total_amount}")
 
-         thank_pic = Image.open("thanku.jpeg")
+         
          col1, col2, col3 = st.columns([1, 6, 1])
 
          with col1:
              st.write("")
 
          with col2:
-             st.image(thank_pic, caption="Thank You")
+             st.write("Thank You")
 
          with col3:
              st.write("")
@@ -68,3 +67,4 @@ class Restaurant():
 Menu={"tea":50,"hot chocolate":350,"coffee":200,"juice":80,"muffin":50,"fries":75,"strawberry pastry":120,"mango mousse":90,"sandwich":50 }
 restaurant=Restaurant(Menu)
 restaurant.process_order()
+
